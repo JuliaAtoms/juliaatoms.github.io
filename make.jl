@@ -1,5 +1,4 @@
 using Documenter
-using Markdown
 
 makedocs(
     sitename = "JuliaAtoms",
