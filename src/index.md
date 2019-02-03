@@ -25,7 +25,7 @@ development, i.e. no stability promised yet):
   geared towards atomic systems (in that it uses data structures from
   AtomicLevels.jl), but it is applicable to other systems as well,
   such as molecules.
-- [AngularMomentumAlgebra.jl](https://github.com/JuliaAtoms/AngularMomentAlgebra.jl)
+- [AngularMomentumAlgebra.jl](https://github.com/JuliaAtoms/AngularMomentumAlgebra.jl)
   A library for the special case of energy expressions in spherical
   symmetry.
 - [AtomicPotentials.jl](https://github.com/JuliaAtoms/AtomicPotentials.jl)
