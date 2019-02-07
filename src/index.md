@@ -25,6 +25,10 @@ development, i.e. no stability promised yet):
   geared towards atomic systems (in that it uses data structures from
   AtomicLevels.jl), but it is applicable to other systems as well,
   such as molecules.
+- [SCF.jl](https://github.com/JuliaAtoms/SCF.jl)
+  ([documentation](https://juliaatoms.github.io/SCF.jl/dev/)) A
+  library for the solution of integro-differential eigenproblems, in a
+  self-consistent manner.
 - [AngularMomentumAlgebra.jl](https://github.com/JuliaAtoms/AngularMomentumAlgebra.jl)
   A library for the special case of energy expressions in spherical
   symmetry.
@@ -36,8 +40,6 @@ Related packages, outside JuliaAtoms:
 - [CoulombIntegrals.jl](https://github.com/jagot/CoulombIntegrals.jl)
   A library that implements the calculation of the Coulombic repulsion
   between pairs of electrons.
-- [SCF.jl](https://github.com/jagot/SCF.jl) A library for the solution
-  of integro-differential eigenproblems, in a self-consistent manner.
 - [PseudoPotentials.jl](https://github.com/jagot/PseudoPotentials.jl)
   Model potentials used to reduces calculation complexity by
   representing a core of electrons in a mean-field sense. This can
