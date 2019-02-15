@@ -30,6 +30,7 @@ development, i.e. no stability promised yet):
   library for the solution of integro-differential eigenproblems, in a
   self-consistent manner.
 - [AngularMomentumAlgebra.jl](https://github.com/JuliaAtoms/AngularMomentumAlgebra.jl)
+  ([documentation](https://juliaatoms.github.io/AngularMomentumAlgebra.jl/dev/))
   A library for the special case of energy expressions in spherical
   symmetry.
 - [AtomicPotentials.jl](https://github.com/JuliaAtoms/AtomicPotentials.jl)
