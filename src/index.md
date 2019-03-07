@@ -13,9 +13,10 @@ development, i.e. no stability promised yet):
   ([documentation](https://juliaatoms.github.io/AtomicLevels.jl)) A
   library used to define electronic configurations constructed from
   electronic orbitals in spherical symmetry.
-- [Atoms.jl](https://github.com/JuliaAtoms/Atoms.jl) Data structures
-  for representing atoms in a product space of orbitals and a radial
-  grid. The radial grid can be any implementation of the
+- [Atoms.jl](https://github.com/JuliaAtoms/Atoms.jl/)
+  ([documentation](https://juliaatoms.github.io/Atoms.jl/dev/)) Data
+  structures for representing atoms in a product space of orbitals and
+  a radial grid. The radial grid can be any implementation of the
   [ContinuumArrays.jl](https://github.com/JuliaApproximation/ContinuumArrays.jl)
   interface.
 - [EnergyExpressions.jl](https://github.com/JuliaAtoms/EnergyExpressions.jl)
@@ -41,6 +42,10 @@ Related packages, outside JuliaAtoms:
 - [CoulombIntegrals.jl](https://github.com/jagot/CoulombIntegrals.jl)
   A library that implements the calculation of the Coulombic repulsion
   between pairs of electrons.
+- [MatrixFactorizations.jl](https://github.com/jagot/MatrixFactorizations.jl)
+  Wrappers around the solvers from
+  [IterativeSolvers.jl](https://github.com/JuliaMath/IterativeSolvers.jl)
+  that can be used as lazy factorizations.
 - [PseudoPotentials.jl](https://github.com/jagot/PseudoPotentials.jl)
   Model potentials used to reduces calculation complexity by
   representing a core of electrons in a mean-field sense. This can
