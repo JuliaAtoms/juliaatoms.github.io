@@ -6,7 +6,7 @@ makedocs(
         "Home" => "index.md",
     ],
     format = Documenter.HTML(
-        edit_branch = "source",
+        edit_link = "source",
     ),
 )
 
