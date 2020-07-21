@@ -18,7 +18,9 @@ development, i.e. no stability promised yet):
   structures for representing atoms in a product space of orbitals and
   a radial grid. The radial grid can be any implementation of the
   [ContinuumArrays.jl](https://github.com/JuliaApproximation/ContinuumArrays.jl)
-  interface.
+  interface, but Atoms.jl has only been tested with
+  [CompactBases.jl](https://github.com/JuliaApproximation/CompactBases.jl)
+  so far.
 - [EnergyExpressions.jl](https://github.com/JuliaAtoms/EnergyExpressions.jl)
   ([documentation](https://juliaatoms.github.io/EnergyExpressions.jl/dev/))
   A library for setting up the energy expression of a system built up
@@ -33,19 +35,19 @@ development, i.e. no stability promised yet):
 - [AngularMomentumAlgebra.jl](https://github.com/JuliaAtoms/AngularMomentumAlgebra.jl)
   ([documentation](https://juliaatoms.github.io/AngularMomentumAlgebra.jl/dev/))
   A library for the special case of energy expressions in spherical
-  symmetry.
+  symmetry, but more importantly, also the computation of tensor
+  matrix elements between spin-orbitals.
 - [AtomicPotentials.jl](https://github.com/JuliaAtoms/AtomicPotentials.jl)
   Provides structures for modelling the atomic nucleus as a potential.
+- [Hydrogen.jl](https://github.com/JuliaAtoms/Hydrogen.jl) Contains
+  some of the analytically known results for atomic hydrogen, or more
+  generally, a one-electron system in spherical symmetry.
 
 Related packages, outside JuliaAtoms:
 
 - [CoulombIntegrals.jl](https://github.com/jagot/CoulombIntegrals.jl)
   A library that implements the calculation of the Coulombic repulsion
-  between pairs of electrons.
-- [MatrixFactorizations.jl](https://github.com/jagot/MatrixFactorizations.jl)
-  Wrappers around the solvers from
-  [IterativeSolvers.jl](https://github.com/JuliaMath/IterativeSolvers.jl)
-  that can be used as lazy factorizations.
+  between pairs of electrons, also known as the Slater integrals.
 - [PseudoPotentials.jl](https://github.com/jagot/PseudoPotentials.jl)
   Model potentials used to reduces calculation complexity by
   representing a core of electrons in a mean-field sense. This can
