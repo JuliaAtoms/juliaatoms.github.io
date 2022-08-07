@@ -20,19 +20,19 @@ development, i.e. no stability promised yet):
   A library used to define electronic configurations constructed from
   electronic orbitals in spherical symmetry.
 
-- [Atoms.jl](https://github.com/JuliaAtoms/Atoms.jl/)
+- [AtomicStructure.jl](https://github.com/JuliaAtoms/AtomicStructure.jl/)
 
-  [![Version](https://img.shields.io/github/v/release/JuliaAtoms/Atoms.jl)](https://github.com/JuliaAtoms/Atoms.jl/releases)
-  [![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliaatoms.org/Atoms.jl/stable/)
-  [![Documentation (dev)](https://img.shields.io/badge/docs-dev-blue.svg)](https://juliaatoms.org/Atoms.jl/dev/)
-  [![GitHub Actions CI](https://github.com/JuliaAtoms/Atoms.jl/workflows/CI/badge.svg)](https://github.com/JuliaAtoms/Atoms.jl/actions)
-  [![CodeCov](https://codecov.io/gh/JuliaAtoms/Atoms.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/JuliaAtoms/Atoms.jl)
+  [![Version](https://img.shields.io/github/v/release/JuliaAtoms/AtomicStructure.jl)](https://github.com/JuliaAtoms/AtomicStructure.jl/releases)
+  [![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliaatoms.org/AtomicStructure.jl/stable/)
+  [![Documentation (dev)](https://img.shields.io/badge/docs-dev-blue.svg)](https://juliaatoms.org/AtomicStructure.jl/dev/)
+  [![GitHub Actions CI](https://github.com/JuliaAtoms/AtomicStructure.jl/workflows/CI/badge.svg)](https://github.com/JuliaAtoms/AtomicStructure.jl/actions)
+  [![CodeCov](https://codecov.io/gh/JuliaAtoms/AtomicStructure.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/JuliaAtoms/AtomicStructure.jl)
 
   Data structures for representing atoms in a product space of
   orbitals and a radial grid. The radial grid can be any
   implementation of the
   [ContinuumArrays.jl](https://github.com/JuliaApproximation/ContinuumArrays.jl)
-  interface, but Atoms.jl has only been tested with
+  interface, but AtomicStructure.jl has only been tested with
   [CompactBases.jl](https://github.com/JuliaApproximation/CompactBases.jl)
   so far. It also contains a submodule for the solution of
   integro-differential eigenproblems, in a self-consistent manner, as
