@@ -44,14 +44,14 @@ tree = mktempdir() do dir
         Pkg.activate(dir)
         Pkg.add("AtomicStructure")
 
-        write(buf, "digraph {\nranksep=\"1.0 equally\";\n")
+        write(buf, "digraph {\nranksep=\"1.0 equally\";\nbgcolor=\"none\";\n")
         deps = Pkg.dependencies()
 
         for (pu,p) in deps
             pinfo = get_pkg_info(pkgs, pu)
             ismypkg(pinfo) || continue
             shape,color = get_shape(pinfo)
-            write(buf, p.name, " [shape=\"$shape\", color=\"$color\"];\n")
+            write(buf, p.name, " [shape=\"$shape\", color=\"$color\", style=\"filled\", fillcolor=\"white\"];\n")
             for (d,du) in p.dependencies
                 dinfo = get_pkg_info(pkgs, du)
                 ismypkg(dinfo) || continue
