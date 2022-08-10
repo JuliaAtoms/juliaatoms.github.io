@@ -1,11 +1,24 @@
 using GraphViz
 using Pkg
 using TOML
+using Tar
+using CodecZlib
 
 regi = findfirst(reg -> reg.name == "General", Pkg.Registry.DEFAULT_REGISTRIES)
 reg = first(Pkg.Registry.find_installed_registries(stdout, [Pkg.Registry.DEFAULT_REGISTRIES[regi]]))
-@show REGISTRY = reg.path
+reg_archive = joinpath(dirname(reg.path), TOML.parse(open(reg.path))["path"])
+@assert occursin(r".tar.gz$", reg_archive)
+@assert isfile(reg_archive)
 
+@info "Decompressing registry" reg_archive
+REGISTRY = open(reg_archive) do arc
+    Tar.extract(GzipDecompressorStream(arc))
+end
+
+@info "Registry extracted to $(REGISTRY)"
+registry_toml = TOML.parse(open(joinpath(REGISTRY, "Registry.toml")))
+
+pkgs = registry_toml["packages"]
 
 function get_pkg_info(pkgs, uuid::AbstractString)
     uuid ∈ keys(pkgs) || return nothing
@@ -13,8 +26,6 @@ function get_pkg_info(pkgs, uuid::AbstractString)
     TOML.parse(open(joinpath(REGISTRY, p["path"], "Package.toml")))
 end
 get_pkg_info(pkgs, uuid::Base.UUID) = get_pkg_info(pkgs, string(uuid))
-
-pkgs = TOML.parse(open(joinpath(REGISTRY, "Registry.toml")))["packages"]
 
 ismypkg(p) = !isnothing(p) && (occursin("JuliaAtoms", p["repo"]) ||
     occursin("JuliaApproximation", p["repo"]) ||
@@ -33,14 +44,14 @@ tree = mktempdir() do dir
         Pkg.activate(dir)
         Pkg.add("AtomicStructure")
 
-        write(buf, "digraph {\nranksep=\"1.0 equally\";\n")
+        write(buf, "digraph {\nranksep=\"1.0 equally\";\nbgcolor=\"none\";\n")
         deps = Pkg.dependencies()
 
         for (pu,p) in deps
             pinfo = get_pkg_info(pkgs, pu)
             ismypkg(pinfo) || continue
             shape,color = get_shape(pinfo)
-            write(buf, p.name, " [shape=\"$shape\", color=\"$color\"];\n")
+            write(buf, p.name, " [shape=\"$shape\", color=\"$color\", style=\"filled\", fillcolor=\"white\"];\n")
             for (d,du) in p.dependencies
                 dinfo = get_pkg_info(pkgs, du)
                 ismypkg(dinfo) || continue

@@ -17,4 +17,5 @@ deploydocs(
     repo = "github.com/JuliaAtoms/juliaatoms.github.io.git",
     branch = "master",
     devbranch = "source",
+    push_preview = true
 )
