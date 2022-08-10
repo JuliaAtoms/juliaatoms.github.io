@@ -2,9 +2,18 @@ using GraphViz
 using Pkg
 using TOML
 
+display(Pkg.Registry.DEFAULT_REGISTRIES)
+
 regi = findfirst(reg -> reg.name == "General", Pkg.Registry.DEFAULT_REGISTRIES)
 reg = first(Pkg.Registry.find_installed_registries(stdout, [Pkg.Registry.DEFAULT_REGISTRIES[regi]]))
-@show REGISTRY = reg.path
+REGISTRY, REGISTRY_TOML = if occursin(r".toml$", reg.path)
+    dirname(reg.path), reg.path
+else
+    reg.path, joinpath(REGISTRY, "Registry.toml")
+end
+@show REGISTRY REGISTRY_TOML
+println("\nFiles in $(REGISTRY):")
+display(readdir(REGISTRY))
 
 
 function get_pkg_info(pkgs, uuid::AbstractString)
@@ -14,7 +23,7 @@ function get_pkg_info(pkgs, uuid::AbstractString)
 end
 get_pkg_info(pkgs, uuid::Base.UUID) = get_pkg_info(pkgs, string(uuid))
 
-pkgs = TOML.parse(open(joinpath(REGISTRY, "Registry.toml")))["packages"]
+pkgs = TOML.parse(open(REGISTRY_TOML))["packages"]
 
 ismypkg(p) = !isnothing(p) && (occursin("JuliaAtoms", p["repo"]) ||
     occursin("JuliaApproximation", p["repo"]) ||
