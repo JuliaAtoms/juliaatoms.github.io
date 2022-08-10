@@ -1,8 +1,10 @@
 using GraphViz
 using Pkg
 using TOML
+using Tar
 
 display(Pkg.Registry.DEFAULT_REGISTRIES)
+println()
 
 regi = findfirst(reg -> reg.name == "General", Pkg.Registry.DEFAULT_REGISTRIES)
 reg = first(Pkg.Registry.find_installed_registries(stdout, [Pkg.Registry.DEFAULT_REGISTRIES[regi]]))
@@ -13,8 +15,20 @@ else
 end
 @show REGISTRY REGISTRY_TOML
 println("\nFiles in $(REGISTRY):")
-display(readdir(REGISTRY))
+files = readdir(REGISTRY)
+display(files)
+println()
+if "General.tar.gz" ∈ files
+    Tar.extract(joinpath(REGISTRY, "General.tar.gz"), joinpath(REGISTRY, "General"))
+    println("\nFiles in $(REGISTRY)/General:")
+    files = readdir(REGISTRY)
+    display(files)
+    println()
+end
 
+registry_toml = TOML.parse(open(REGISTRY_TOML))
+display(registry_toml)
+pkgs = registry_toml["packages"]
 
 function get_pkg_info(pkgs, uuid::AbstractString)
     uuid ∈ keys(pkgs) || return nothing
@@ -22,8 +36,6 @@ function get_pkg_info(pkgs, uuid::AbstractString)
     TOML.parse(open(joinpath(REGISTRY, p["path"], "Package.toml")))
 end
 get_pkg_info(pkgs, uuid::Base.UUID) = get_pkg_info(pkgs, string(uuid))
-
-pkgs = TOML.parse(open(REGISTRY_TOML))["packages"]
 
 ismypkg(p) = !isnothing(p) && (occursin("JuliaAtoms", p["repo"]) ||
     occursin("JuliaApproximation", p["repo"]) ||
