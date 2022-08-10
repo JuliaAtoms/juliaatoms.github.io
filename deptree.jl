@@ -2,32 +2,22 @@ using GraphViz
 using Pkg
 using TOML
 using Tar
-
-display(Pkg.Registry.DEFAULT_REGISTRIES)
-println()
+using CodecZlib
 
 regi = findfirst(reg -> reg.name == "General", Pkg.Registry.DEFAULT_REGISTRIES)
 reg = first(Pkg.Registry.find_installed_registries(stdout, [Pkg.Registry.DEFAULT_REGISTRIES[regi]]))
-REGISTRY, REGISTRY_TOML = if occursin(r".toml$", reg.path)
-    dirname(reg.path), reg.path
-else
-    reg.path, joinpath(REGISTRY, "Registry.toml")
-end
-@show REGISTRY REGISTRY_TOML
-println("\nFiles in $(REGISTRY):")
-files = readdir(REGISTRY)
-display(files)
-println()
-if "General.tar.gz" ∈ files
-    Tar.extract(joinpath(REGISTRY, "General.tar.gz"), joinpath(REGISTRY, "General"))
-    println("\nFiles in $(REGISTRY)/General:")
-    files = readdir(REGISTRY)
-    display(files)
-    println()
+reg_archive = joinpath(dirname(reg.path), TOML.parse(open(reg.path))["path"])
+@assert occursin(r".tar.gz$", reg_archive)
+@assert isfile(reg_archive)
+
+@info "Decompressing registry" reg_archive
+REGISTRY = open(reg_archive) do arc
+    Tar.extract(GzipDecompressorStream(arc))
 end
 
-registry_toml = TOML.parse(open(REGISTRY_TOML))
-display(registry_toml)
+@info "Registry extracted to $(REGISTRY)"
+registry_toml = TOML.parse(open(joinpath(REGISTRY, "Registry.toml")))
+
 pkgs = registry_toml["packages"]
 
 function get_pkg_info(pkgs, uuid::AbstractString)
