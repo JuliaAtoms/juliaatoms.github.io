@@ -7,17 +7,17 @@
 <svg width="1093pt" height="692pt"
  viewBox="0.00 0.00 1092.61 692.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 688)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-688 1088.61,-688 1088.61,4 -4,4"/>
+<polygon fill="transparent" stroke="transparent" points="-4,4 -4,-688 1088.61,-688 1088.61,4 -4,4"/>
 <!-- EnergyExpressions -->
 <g id="node1" class="node">
 <title>EnergyExpressions</title>
-<ellipse fill="none" stroke="red" cx="100.74" cy="-450" rx="100.98" ry="18"/>
+<ellipse fill="white" stroke="red" cx="100.74" cy="-450" rx="100.98" ry="18"/>
 <text text-anchor="middle" x="100.74" y="-446.3" font-family="Times,serif" font-size="14.00">EnergyExpressions</text>
 </g>
 <!-- AtomicLevels -->
 <g id="node2" class="node">
 <title>AtomicLevels</title>
-<ellipse fill="none" stroke="red" cx="229.74" cy="-342" rx="72.59" ry="18"/>
+<ellipse fill="white" stroke="red" cx="229.74" cy="-342" rx="72.59" ry="18"/>
 <text text-anchor="middle" x="229.74" y="-338.3" font-family="Times,serif" font-size="14.00">AtomicLevels</text>
 </g>
 <!-- EnergyExpressions&#45;&gt;AtomicLevels -->
@@ -29,19 +29,19 @@
 <!-- CompositeTypes -->
 <g id="node3" class="node">
 <title>CompositeTypes</title>
-<polygon fill="none" stroke="blue" points="597.74,-36 463.74,-36 463.74,0 597.74,0 597.74,-36"/>
+<polygon fill="white" stroke="blue" points="597.74,-36 463.74,-36 463.74,0 597.74,0 597.74,-36"/>
 <text text-anchor="middle" x="530.74" y="-14.3" font-family="Times,serif" font-size="14.00">CompositeTypes</text>
 </g>
 <!-- CompactBases -->
 <g id="node4" class="node">
 <title>CompactBases</title>
-<polygon fill="none" stroke="blue" points="641.74,-468 519.74,-468 519.74,-432 641.74,-432 641.74,-468"/>
+<polygon fill="white" stroke="blue" points="641.74,-468 519.74,-468 519.74,-432 641.74,-432 641.74,-468"/>
 <text text-anchor="middle" x="580.74" y="-446.3" font-family="Times,serif" font-size="14.00">CompactBases</text>
 </g>
 <!-- QuasiArrays -->
 <g id="node5" class="node">
 <title>QuasiArrays</title>
-<polygon fill="none" stroke="blue" points="582.74,-252 478.74,-252 478.74,-216 582.74,-216 582.74,-252"/>
+<polygon fill="white" stroke="blue" points="582.74,-252 478.74,-252 478.74,-216 582.74,-216 582.74,-252"/>
 <text text-anchor="middle" x="530.74" y="-230.3" font-family="Times,serif" font-size="14.00">QuasiArrays</text>
 </g>
 <!-- CompactBases&#45;&gt;QuasiArrays -->
@@ -53,7 +53,7 @@
 <!-- FastGaussQuadrature -->
 <g id="node6" class="node">
 <title>FastGaussQuadrature</title>
-<polygon fill="none" stroke="blue" points="782.24,-360 609.24,-360 609.24,-324 782.24,-324 782.24,-360"/>
+<polygon fill="white" stroke="blue" points="782.24,-360 609.24,-360 609.24,-324 782.24,-324 782.24,-360"/>
 <text text-anchor="middle" x="695.74" y="-338.3" font-family="Times,serif" font-size="14.00">FastGaussQuadrature</text>
 </g>
 <!-- CompactBases&#45;&gt;FastGaussQuadrature -->
@@ -65,7 +65,7 @@
 <!-- ContinuumArrays -->
 <g id="node7" class="node">
 <title>ContinuumArrays</title>
-<polygon fill="none" stroke="blue" points="552.24,-360 409.24,-360 409.24,-324 552.24,-324 552.24,-360"/>
+<polygon fill="white" stroke="blue" points="552.24,-360 409.24,-360 409.24,-324 552.24,-324 552.24,-360"/>
 <text text-anchor="middle" x="480.74" y="-338.3" font-family="Times,serif" font-size="14.00">ContinuumArrays</text>
 </g>
 <!-- CompactBases&#45;&gt;ContinuumArrays -->
@@ -77,7 +77,7 @@
 <!-- DomainSets -->
 <g id="node8" class="node">
 <title>DomainSets</title>
-<polygon fill="none" stroke="blue" points="582.24,-144 479.24,-144 479.24,-108 582.24,-108 582.24,-144"/>
+<polygon fill="white" stroke="blue" points="582.24,-144 479.24,-144 479.24,-108 582.24,-108 582.24,-144"/>
 <text text-anchor="middle" x="530.74" y="-122.3" font-family="Times,serif" font-size="14.00">DomainSets</text>
 </g>
 <!-- QuasiArrays&#45;&gt;DomainSets -->
@@ -101,13 +101,13 @@
 <!-- Optim -->
 <g id="node9" class="node">
 <title>Optim</title>
-<polygon fill="none" stroke="green" points="848.74,-576 792.6,-558 848.74,-540 904.88,-558 848.74,-576"/>
+<polygon fill="white" stroke="green" points="848.74,-576 792.6,-558 848.74,-540 904.88,-558 848.74,-576"/>
 <text text-anchor="middle" x="848.74" y="-554.3" font-family="Times,serif" font-size="14.00">Optim</text>
 </g>
 <!-- LineSearches -->
 <g id="node10" class="node">
 <title>LineSearches</title>
-<polygon fill="none" stroke="green" points="980.74,-468 877.01,-450 980.74,-432 1084.47,-450 980.74,-468"/>
+<polygon fill="white" stroke="green" points="980.74,-468 877.01,-450 980.74,-432 1084.47,-450 980.74,-468"/>
 <text text-anchor="middle" x="980.74" y="-446.3" font-family="Times,serif" font-size="14.00">LineSearches</text>
 </g>
 <!-- Optim&#45;&gt;LineSearches -->
@@ -119,7 +119,7 @@
 <!-- NLSolversBase -->
 <g id="node11" class="node">
 <title>NLSolversBase</title>
-<polygon fill="none" stroke="green" points="967.74,-360 852.95,-342 967.74,-324 1082.53,-342 967.74,-360"/>
+<polygon fill="white" stroke="green" points="967.74,-360 852.95,-342 967.74,-324 1082.53,-342 967.74,-360"/>
 <text text-anchor="middle" x="967.74" y="-338.3" font-family="Times,serif" font-size="14.00">NLSolversBase</text>
 </g>
 <!-- Optim&#45;&gt;NLSolversBase -->
@@ -137,7 +137,7 @@
 <!-- CoulombIntegrals -->
 <g id="node12" class="node">
 <title>CoulombIntegrals</title>
-<ellipse fill="none" stroke="red" cx="580.74" cy="-558" rx="93.68" ry="18"/>
+<ellipse fill="white" stroke="red" cx="580.74" cy="-558" rx="93.68" ry="18"/>
 <text text-anchor="middle" x="580.74" y="-554.3" font-family="Times,serif" font-size="14.00">CoulombIntegrals</text>
 </g>
 <!-- CoulombIntegrals&#45;&gt;CompactBases -->
@@ -161,7 +161,7 @@
 <!-- AngularMomentumAlgebra -->
 <g id="node13" class="node">
 <title>AngularMomentumAlgebra</title>
-<ellipse fill="none" stroke="red" cx="179.74" cy="-558" rx="136.48" ry="18"/>
+<ellipse fill="white" stroke="red" cx="179.74" cy="-558" rx="136.48" ry="18"/>
 <text text-anchor="middle" x="179.74" y="-554.3" font-family="Times,serif" font-size="14.00">AngularMomentumAlgebra</text>
 </g>
 <!-- AngularMomentumAlgebra&#45;&gt;EnergyExpressions -->
@@ -179,7 +179,7 @@
 <!-- AtomicStructure -->
 <g id="node14" class="node">
 <title>AtomicStructure</title>
-<ellipse fill="none" stroke="red" cx="420.74" cy="-666" rx="87.99" ry="18"/>
+<ellipse fill="white" stroke="red" cx="420.74" cy="-666" rx="87.99" ry="18"/>
 <text text-anchor="middle" x="420.74" y="-662.3" font-family="Times,serif" font-size="14.00">AtomicStructure</text>
 </g>
 <!-- AtomicStructure&#45;&gt;EnergyExpressions -->
