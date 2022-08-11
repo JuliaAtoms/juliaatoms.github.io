@@ -8,4 +8,9 @@ boxes, and packages from
 [JuliaNLSolvers](https://github.com/JuliaNLSolvers/) in green
 diamonds.
 
-![Package hierarchy diagram](./pkg_hierarchy.svg)
+```@raw html
+<p>
+  <img class="docs-light-only" src="../pkg_hierarchy.svg" alt="Package hierarchy diagram">
+  <img class="docs-dark-only" src="../pkg_hierarchy-dark.svg" alt="Package hierarchy diagram">
+</p>
+```

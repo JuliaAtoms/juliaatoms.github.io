@@ -32,9 +32,9 @@ ismypkg(p) = !isnothing(p) && (occursin("JuliaAtoms", p["repo"]) ||
     occursin("JuliaNLSolvers", p["repo"]))
 
 function get_shape(p)
-    occursin("JuliaAtoms", p["repo"]) && return ("ellipse","red")
-    occursin("JuliaApproximation", p["repo"]) && return ("box","blue")
-    occursin("JuliaNLSolvers", p["repo"]) && return ("diamond","green")
+    occursin("JuliaAtoms", p["repo"]) && return ("ellipse","___red_color")
+    occursin("JuliaApproximation", p["repo"]) && return ("box","___blue_color")
+    occursin("JuliaNLSolvers", p["repo"]) && return ("diamond","___green_color")
     ("house","black")
 end
 
@@ -51,11 +51,11 @@ tree = mktempdir() do dir
             pinfo = get_pkg_info(pkgs, pu)
             ismypkg(pinfo) || continue
             shape,color = get_shape(pinfo)
-            write(buf, p.name, " [shape=\"$shape\", color=\"$color\", style=\"filled\", fillcolor=\"white\"];\n")
+            write(buf, p.name, " [shape=\"$shape\", color=\"$color\", style=\"filled\", fillcolor=\"___fill_color\", fontcolor=\"___font_color\"];\n")
             for (d,du) in p.dependencies
                 dinfo = get_pkg_info(pkgs, du)
                 ismypkg(dinfo) || continue
-                write(buf, p.name, " -> ", d, ";\n")
+                write(buf, p.name, " -> ", d, "[color=\"___edge_color\"];\n")
             end
         end
         write(buf, "}\n")
@@ -65,9 +65,19 @@ tree = mktempdir() do dir
     String(take!(buf))
 end
 
-graph = GraphViz.Graph(tree)
-GraphViz.layout!(graph, engine="dot")
+for (suffix,(fill_color,font_color,edge_color,
+             red_color,blue_color,green_color)) in [("",("none","black","black","red","blue","green")),
+                                                    ("-dark",("none","white","white","crimson","dodgerblue","springgreen"))]
+    graph = GraphViz.Graph(replace(tree,
+                                   r"___fill_color" => fill_color,
+                                   r"___font_color" => font_color,
+                                   r"___edge_color" => edge_color,
+                                   r"___red_color" => red_color,
+                                   r"___blue_color" => blue_color,
+                                   r"___green_color" => green_color))
+    GraphViz.layout!(graph, engine="dot")
 
-open("src/pkg_hierarchy.svg","w") do file
-    show(file, "image/svg+xml", graph)
+    open("src/pkg_hierarchy$(suffix).svg","w") do file
+        show(file, "image/svg+xml", graph)
+    end
 end

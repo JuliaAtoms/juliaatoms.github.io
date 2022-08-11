@@ -1,3 +1,4 @@
 build/
 Manifest.toml
 /src/pkg_hierarchy.svg
+/src/pkg_hierarchy-dark.svg
